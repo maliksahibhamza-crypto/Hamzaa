@@ -40,7 +40,7 @@ document.getElementById('loginBtn').addEventListener('click', () => {
     const email = document.getElementById('loginEmail').value.trim();
     const password = document.getElementById('loginPassword').value;
     signInWithEmailAndPassword(auth, email, password).catch(err => {
-        document.getElementById('login-error').innerText = "Ghalat email ya password!";
+        document.getElementById('login-error').innerText = "Invalid email or password.";
     });
 });
 
