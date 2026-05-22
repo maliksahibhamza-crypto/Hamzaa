@@ -11,6 +11,7 @@
 
     <div class="login-container" id="loginCard">
         <h2>Welcome Back</h2>
+        <div id="login-error" style="color: red; font-size: 13px; margin-bottom: 10px; text-align: center;"></div>
         <form id="loginForm" onsubmit="return false;">
             <div class="input-group">
                 <label>Email</label>
@@ -33,6 +34,7 @@
 
     <div class="login-container hidden" id="signUpCard">
         <h2>Create Account</h2>
+        <div id="signup-error" style="color: red; font-size: 13px; margin-bottom: 10px; text-align: center;"></div>
         <form id="signUpForm" onsubmit="return false;">
             <div class="input-group">
                 <label>Full Name</label>
@@ -71,37 +73,9 @@
     </div>
 
     <div class="dashboard-container hidden" id="dashboardCard">
-        <div class="dash-header">
-            <h3>Hello, @<span id="userGreeting">User</span></h3>
-            <button class="logout-btn" id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i></button>
         </div>
-
-        <div class="tab-navigation">
-            <button class="tab-btn active" id="taskTabHead">📝 Tasks</button>
-            <button class="tab-btn" id="chatTabHead">💬 Chat</button>
-        </div>
-
-        <div id="tasksTab">
-            <div class="task-box-layout">
-                <input type="text" id="taskInput" class="task-input" placeholder="What needs to be done today?">
-                <button id="addTaskBtn" style="background:#1a1a1a; color:#fff; border:none; padding:0 20px; border-radius:8px; font-weight:bold; font-size:20px;">+</button>
-            </div>
-            <ul class="task-list" id="taskList"></ul>
-        </div>
-
-        <div id="chatTab" class="chat-view hidden">
-            <div class="user-search-area">
-                <input type="text" id="searchUser" class="search-box" placeholder="Search friend's username to chat...">
-            </div>
-            <div class="chat-logs" id="chatLogs">Select a user to start conversation.</div>
-            <div class="chat-input-area">
-                <input type="text" id="chatMsgInput" class="chat-input" placeholder="Type a message...">
-                <button class="send-chat-btn" id="sendChatBtn"><i class="fa-solid fa-paper-plane"></i></button>
-            </div>
-        </div>
-    </div>
 
     <script type="module" src="app.js"></script>
 </body>
-          </html>
-          
+    </html>
+    
