@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Task & Chat Tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="login-container" id="loginCard">
+        <h2>Welcome Back</h2>
+        <form id="loginForm" onsubmit="return false;">
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" id="loginEmail" placeholder="Enter your email" required>
+            </div>
+            <div class="input-group">
+                <label>Password</label>
+                <div class="password-wrapper">
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                    <i class="fa-regular fa-eye toggle-password" id="eyeIcon"></i>
+                </div>
+            </div>
+            <button type="button" class="login-btn" id="loginBtn">Log In</button>
+        </form>
+        <div class="extra-options">
+            <a id="goToForgot">Forgot Password?</a>
+            <a id="goToSignUp">Sign Up</a>
+        </div>
+    </div>
+
+    <div class="login-container hidden" id="signUpCard">
+        <h2>Create Account</h2>
+        <form id="signUpForm" onsubmit="return false;">
+            <div class="input-group">
+                <label>Full Name</label>
+                <input type="text" id="regName" placeholder="Enter your full name" required>
+            </div>
+            <div class="input-group">
+                <label>Username</label>
+                <input type="text" id="regUsername" placeholder="Choose unique username" required>
+            </div>
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" id="regEmail" placeholder="Enter your email" required>
+            </div>
+            <div class="input-group">
+                <label>Password</label>
+                <div class="password-wrapper">
+                    <input type="password" id="regPassword" placeholder="Create a password" required>
+                    <i class="fa-regular fa-eye toggle-password" id="regEyeIcon"></i>
+                </div>
+            </div>
+            <button type="button" class="login-btn" id="signUpBtn">Sign Up</button>
+        </form>
+        <div class="back-to-login">Already have an account? <a id="backToLogin">Log In</a></div>
+    </div>
+
+    <div class="login-container hidden" id="forgotCard">
+        <h2>Reset Password</h2>
+        <form id="forgotForm" onsubmit="return false;">
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" id="forgotEmail" placeholder="Enter your registered email" required>
+            </div>
+            <button type="button" class="login-btn" id="forgotBtn">Reset Password</button>
+        </form>
+        <div class="back-to-login">Back to <a id="backToLoginFromForgot">Log In</a></div>
+    </div>
+
+    <div class="dashboard-container hidden" id="dashboardCard">
+        <div class="dash-header">
+            <h3>Hello, @<span id="userGreeting">User</span></h3>
+            <button class="logout-btn" id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i></button>
+        </div>
+
+        <div class="tab-navigation">
+            <button class="tab-btn active" id="taskTabHead">📝 Tasks</button>
+            <button class="tab-btn" id="chatTabHead">💬 Chat</button>
+        </div>
+
+        <div id="tasksTab">
+            <div class="task-box-layout">
+                <input type="text" id="taskInput" class="task-input" placeholder="What needs to be done today?">
+                <button id="addTaskBtn" style="background:#1a1a1a; color:#fff; border:none; padding:0 20px; border-radius:8px; font-weight:bold; font-size:20px;">+</button>
+            </div>
+            <ul class="task-list" id="taskList"></ul>
+        </div>
+
+        <div id="chatTab" class="chat-view hidden">
+            <div class="user-search-area">
+                <input type="text" id="searchUser" class="search-box" placeholder="Search friend's username to chat...">
+            </div>
+            <div class="chat-logs" id="chatLogs">Select a user to start conversation.</div>
+            <div class="chat-input-area">
+                <input type="text" id="chatMsgInput" class="chat-input" placeholder="Type a message...">
+                <button class="send-chat-btn" id="sendChatBtn"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+          </html>
+          
