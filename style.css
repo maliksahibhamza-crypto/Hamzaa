@@ -1,80 +1,78 @@
 /* =========================================================
-   1. GLOBAL SETTINGS (Poori website ke liye)
+   1. ROOT & BASE STYLES: Ye website ki buniyad hai
    ========================================================= */
 * {
-    box-sizing: border-box; /* Padding ki wajah se box na phate */
+    box-sizing: border-box; /* Padding ko box ke andar rakhta hai */
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Poori screen ko cover karne ke liye background */
 html, body {
     width: 100%;
-    height: 100%;
-    background-color: #f5f5f5; /* Light grey background */
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Scrollbar na aaye */
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center;     /* Vertically center */
+    padding: 15px;           /* Screen ke kinaro se thoda gap */
 }
 
 /* =========================================================
-   2. MAIN CONTAINER (Login Box ka pura dhancha)
+   2. LOGIN CONTAINER: Card ka style
    ========================================================= */
 .login-container {
-    width: 100vw;       /* Screen ki poori chaudai */
-    min-height: 100vh;  /* Screen ki poori unchai */
-    padding: 20px;      /* Charo taraf se thoda space */
-    background-color: #ffffff; /* White card */
-    display: flex;
-    flex-direction: column; /* Sab kuch upar se niche lagega */
-    justify-content: center; /* Vertical center */
-    align-items: center;     /* Horizontal center */
+    width: 100%;
+    max-width: 400px;        /* Box ko bahut bada hone se rokta hai */
+    background-color: #ffffff;
+    padding: 25px;           /* Box ke andar ka gap */
+    border-radius: 15px;     /* Kone gol karne ke liye */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Halka sa shadow effect */
 }
 
-/* Jab hume Login/Sign Up toggle karna ho */
 .hidden { 
-    display: none !important;
+    display: none !important; /* JS ke liye element chupane ko */
 }
 
 /* =========================================================
-   3. HEADING (Welcome Back / Create Account)
+   3. HEADING: "Welcome Back" style
    ========================================================= */
 h2 {
-    margin-bottom: 30px;
-    font-size: 32px;
+    margin-bottom: 25px;
+    font-size: 24px;         /* Balanced font size */
     text-align: center;
     color: #1a1a1a;
     font-weight: 700;
 }
 
 /* =========================================================
-   4. INPUT FIELDS (Email / Username / Password)
+   4. INPUT GROUPS: Har input field ke liye
    ========================================================= */
 .input-group {
-    margin-bottom: 25px;
+    margin-bottom: 18px;
     width: 100%;
-    max-width: 500px; /* Mobile par screen jitna, PC par 500px max */
 }
 
 .input-group label {
     display: block;
-    margin-bottom: 10px;
-    font-size: 16px;
-    color: #555;
+    margin-bottom: 6px;
+    font-size: 13px;         /* Chhota aur saaf label */
+    color: #666;
     font-weight: 500;
 }
 
 .input-group input {
     width: 100%;
-    padding: 20px;
-    border: 2px solid #ddd;
-    border-radius: 12px;
-    font-size: 18px;
-    outline: none; /* Click karne par blue line na aaye */
+    padding: 12px 15px;      /* Click karne wali jagah */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;           /* Focus ring hatane ke liye */
     transition: 0.3s;
 }
 
-/* Password wala eye icon box */
+/* Password wala wrapper */
 .password-wrapper {
     position: relative;
     width: 100%;
@@ -82,80 +80,79 @@ h2 {
     align-items: center;
 }
 
-/* Eye Icon */
+/* Eye icon ka style */
 .toggle-password {
     position: absolute;
-    right: 20px;
+    right: 12px;
     cursor: pointer;
-    font-size: 22px;
-    color: #777;
+    font-size: 18px;
+    color: #888;
 }
 
 /* =========================================================
-   5. BUTTON (Log In / Sign Up)
+   5. BUTTON: Login/Sign Up ka button
    ========================================================= */
 .login-btn {
     width: 100%;
-    max-width: 500px;
-    padding: 20px;
-    background-color: #000; /* Black color */
-    color: #fff;           /* White text */
+    padding: 12px;
+    background-color: #000;
+    color: #fff;
     border: none;
-    border-radius: 12px;
-    font-size: 20px;
+    border-radius: 8px;
+    font-size: 16px;
     font-weight: 600;
     cursor: pointer;
+    margin-top: 10px;
     transition: 0.3s;
 }
 
 .login-btn:hover {
-    background-color: #333; /* Hover karne par halka grey */
+    background-color: #333;
 }
 
 /* =========================================================
-   6. LINKS (Forgot Password / Sign Up)
+   6. LINKS: Forgot Password aur Sign Up
    ========================================================= */
 .extra-options {
-    margin-top: 25px;
-    width: 100%;
-    max-width: 500px;
+    margin-top: 18px;
     display: flex;
-    justify-content: space-between; /* Dono kinaro pe space */
-    font-size: 16px;
+    justify-content: space-between;
+    font-size: 13px;
 }
 
 .extra-options a, .back-to-login a {
-    color: #007bff; /* Blue links */
+    color: #007bff;          /* Blue color ki links */
     text-decoration: none;
     cursor: pointer;
 }
 
 .back-to-login {
-    margin-top: 25px;
+    margin-top: 18px;
     text-align: center;
-    font-size: 16px;
+    font-size: 13px;
 }
 
 /* =========================================================
-   7. TOAST (Notification message)
+   7. TOAST: Notification popup
    ========================================================= */
 #toast {
-    visibility: hidden; /* Pehle invisible */
-    min-width: 300px;
+    visibility: hidden;      /* Starting mein invisible */
+    min-width: 200px;
     background-color: #333;
     color: #fff;
     text-align: center;
-    border-radius: 10px;
-    padding: 20px;
+    border-radius: 8px;
+    padding: 12px;
     position: fixed;
-    bottom: 30px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
+    font-size: 13px;
     z-index: 1000;
 }
 
 #toast.show {
-    visibility: visible; /* JS se jab 'show' class milegi, tab dikhega */
+    visibility: visible;     /* JS se class aate hi dikhega */
     animation: fadein 0.5s;
 }
 
