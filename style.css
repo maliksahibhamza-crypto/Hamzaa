@@ -1,79 +1,80 @@
 /* =========================================================
-   1. ROOT & BASE STYLES
+   1. GLOBAL SETTINGS (Poori website ke liye)
    ========================================================= */
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; /* Padding ki wajah se box na phate */
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* YAHAN HUMNE CENTER KARNE KA LOGIC ADD KIYA HAI */
 html, body {
     width: 100%;
-    min-height: 100vh;
-    background-color: #f5f5f5;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    padding: 15px;
-    color: #333;
+    height: 100%;
+    background-color: #f5f5f5; /* Light grey background */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Scrollbar na aaye */
 }
-/* CENTER LOGIC ENDS HERE */
 
 /* =========================================================
-   2. CONTAINERS & LAYOUT
+   2. MAIN CONTAINER (Login Box ka pura dhancha)
    ========================================================= */
 .login-container {
-    width: 100%; 
-    max-width: 400px;
-    padding: 25px;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 100vw;       /* Screen ki poori chaudai */
+    min-height: 100vh;  /* Screen ki poori unchai */
+    padding: 20px;      /* Charo taraf se thoda space */
+    background-color: #ffffff; /* White card */
+    display: flex;
+    flex-direction: column; /* Sab kuch upar se niche lagega */
+    justify-content: center; /* Vertical center */
+    align-items: center;     /* Horizontal center */
 }
 
+/* Jab hume Login/Sign Up toggle karna ho */
 .hidden { 
     display: none !important;
 }
 
+/* =========================================================
+   3. HEADING (Welcome Back / Create Account)
+   ========================================================= */
 h2 {
-    margin-bottom: 25px;
-    font-size: 24px;
+    margin-bottom: 30px;
+    font-size: 32px;
     text-align: center;
     color: #1a1a1a;
+    font-weight: 700;
 }
 
 /* =========================================================
-   3. INPUT FIELDS & GROUPS
+   4. INPUT FIELDS (Email / Username / Password)
    ========================================================= */
 .input-group {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     width: 100%;
+    max-width: 500px; /* Mobile par screen jitna, PC par 500px max */
 }
 
 .input-group label {
     display: block;
-    margin-bottom: 8px;
-    font-size: 14px;
-    font-weight: 500;
+    margin-bottom: 10px;
+    font-size: 16px;
     color: #555;
+    font-weight: 500;
 }
 
 .input-group input {
     width: 100%;
-    padding: 14px 16px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 16px;
-    outline: none;
-    transition: border-color 0.3s;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    font-size: 18px;
+    outline: none; /* Click karne par blue line na aaye */
+    transition: 0.3s;
 }
 
-.input-group input:focus {
-    border-color: #000;
-}
-
+/* Password wala eye icon box */
 .password-wrapper {
     position: relative;
     width: 100%;
@@ -81,81 +82,84 @@ h2 {
     align-items: center;
 }
 
+/* Eye Icon */
 .toggle-password {
     position: absolute;
-    right: 15px;
+    right: 20px;
     cursor: pointer;
+    font-size: 22px;
     color: #777;
-    font-size: 18px;
-    padding: 5px;
 }
 
 /* =========================================================
-   4. BUTTONS & LINKS
+   5. BUTTON (Log In / Sign Up)
    ========================================================= */
 .login-btn {
     width: 100%;
-    padding: 14px;
-    background-color: #1a1a1a;
-    color: #ffffff;
+    max-width: 500px;
+    padding: 20px;
+    background-color: #000; /* Black color */
+    color: #fff;           /* White text */
     border: none;
-    border-radius: 8px;
-    font-size: 16px;
+    border-radius: 12px;
+    font-size: 20px;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: 0.3s;
 }
 
 .login-btn:hover {
-    background-color: #333;
+    background-color: #333; /* Hover karne par halka grey */
 }
 
+/* =========================================================
+   6. LINKS (Forgot Password / Sign Up)
+   ========================================================= */
 .extra-options {
-    margin-top: 20px;
+    margin-top: 25px;
+    width: 100%;
+    max-width: 500px;
     display: flex;
-    justify-content: space-between;
-    font-size: 14px;
+    justify-content: space-between; /* Dono kinaro pe space */
+    font-size: 16px;
 }
 
 .extra-options a, .back-to-login a {
-    color: #666;
+    color: #007bff; /* Blue links */
     text-decoration: none;
     cursor: pointer;
 }
 
 .back-to-login {
-    margin-top: 20px;
+    margin-top: 25px;
     text-align: center;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 /* =========================================================
-   5. TOAST NOTIFICATION STYLING
+   7. TOAST (Notification message)
    ========================================================= */
 #toast {
-    visibility: hidden;
-    min-width: 250px;
+    visibility: hidden; /* Pehle invisible */
+    min-width: 300px;
     background-color: #333;
     color: #fff;
     text-align: center;
-    border-radius: 8px;
-    padding: 16px;
+    border-radius: 10px;
+    padding: 20px;
     position: fixed;
-    z-index: 9999;
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 14px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
 }
 
 #toast.show {
-    visibility: visible;
+    visibility: visible; /* JS se jab 'show' class milegi, tab dikhega */
     animation: fadein 0.5s;
 }
 
 @keyframes fadein {
     from { opacity: 0; }
     to { opacity: 1; }
-   }
-   
+}
