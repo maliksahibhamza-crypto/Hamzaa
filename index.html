@@ -6,23 +6,30 @@
     <title>Task & Chat Tracker</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Toast Notification Styling */
+        #toast { visibility: hidden; min-width: 250px; background-color: #333; color: #fff; text-align: center; border-radius: 5px; padding: 16px; position: fixed; z-index: 999; bottom: 30px; left: 50%; transform: translateX(-50%); }
+        #toast.show { visibility: visible; }
+
+        /* Password Eye Icon Styling */
+        .password-wrapper { position: relative; }
+        .toggle-password { position: absolute; right: 10px; top: 38px; cursor: pointer; color: #666; font-size: 18px; }
+        .hidden { display: none; }
+    </style>
 </head>
 <body>
 
     <div class="login-container" id="loginCard">
         <h2>Welcome Back</h2>
-        <div id="login-error" style="color: red; font-size: 13px; margin-bottom: 10px; text-align: center;"></div>
         <form id="loginForm" onsubmit="return false;">
             <div class="input-group">
                 <label>Email</label>
                 <input type="email" id="loginEmail" placeholder="Enter your email" required>
             </div>
-            <div class="input-group">
+            <div class="input-group password-wrapper">
                 <label>Password</label>
-                <div class="password-wrapper">
-                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
-                    <i class="fa-regular fa-eye toggle-password" id="eyeIcon"></i>
-                </div>
+                <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                <i class="fa-regular fa-eye toggle-password" id="eyeIcon"></i>
             </div>
             <button type="button" class="login-btn" id="loginBtn">Log In</button>
         </form>
@@ -34,7 +41,6 @@
 
     <div class="login-container hidden" id="signUpCard">
         <h2>Create Account</h2>
-        <div id="signup-error" style="color: red; font-size: 13px; margin-bottom: 10px; text-align: center;"></div>
         <form id="signUpForm" onsubmit="return false;">
             <div class="input-group">
                 <label>Full Name</label>
@@ -48,12 +54,10 @@
                 <label>Email</label>
                 <input type="email" id="regEmail" placeholder="Enter your email" required>
             </div>
-            <div class="input-group">
+            <div class="input-group password-wrapper">
                 <label>Password</label>
-                <div class="password-wrapper">
-                    <input type="password" id="regPassword" placeholder="Create a password" required>
-                    <i class="fa-regular fa-eye toggle-password" id="regEyeIcon"></i>
-                </div>
+                <input type="password" id="regPassword" placeholder="Create a password" required>
+                <i class="fa-regular fa-eye toggle-password" id="regEyeIcon"></i>
             </div>
             <button type="button" class="login-btn" id="signUpBtn">Sign Up</button>
         </form>
@@ -72,10 +76,11 @@
         <div class="back-to-login">Back to <a id="backToLoginFromForgot">Log In</a></div>
     </div>
 
+    <div id="toast"></div>
+
     <div class="dashboard-container hidden" id="dashboardCard">
         </div>
 
     <script type="module" src="app.js"></script>
 </body>
-    </html>
-    
+</html>
