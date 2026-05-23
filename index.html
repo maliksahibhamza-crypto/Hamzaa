@@ -2,20 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task & Chat Tracker</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Toast Notification Styling */
-        #toast { visibility: hidden; min-width: 250px; background-color: #333; color: #fff; text-align: center; border-radius: 5px; padding: 16px; position: fixed; z-index: 999; bottom: 30px; left: 50%; transform: translateX(-50%); }
-        #toast.show { visibility: visible; }
-
-        /* Password Eye Icon Styling */
-        .password-wrapper { position: relative; }
-        .toggle-password { position: absolute; right: 10px; top: 38px; cursor: pointer; color: #666; font-size: 18px; }
-        .hidden { display: none; }
-    </style>
 </head>
 <body>
 
@@ -26,11 +16,15 @@
                 <label>Email</label>
                 <input type="email" id="loginEmail" placeholder="Enter your email" required>
             </div>
-            <div class="input-group password-wrapper">
+            
+            <div class="input-group">
                 <label>Password</label>
-                <input type="password" id="loginPassword" placeholder="Enter your password" required>
-                <i class="fa-regular fa-eye toggle-password" id="eyeIcon"></i>
+                <div class="password-wrapper">
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                    <i class="fa-regular fa-eye toggle-password" id="eyeIcon"></i>
+                </div>
             </div>
+            
             <button type="button" class="login-btn" id="loginBtn">Log In</button>
         </form>
         <div class="extra-options">
@@ -54,11 +48,15 @@
                 <label>Email</label>
                 <input type="email" id="regEmail" placeholder="Enter your email" required>
             </div>
-            <div class="input-group password-wrapper">
+            
+            <div class="input-group">
                 <label>Password</label>
-                <input type="password" id="regPassword" placeholder="Create a password" required>
-                <i class="fa-regular fa-eye toggle-password" id="regEyeIcon"></i>
+                <div class="password-wrapper">
+                    <input type="password" id="regPassword" placeholder="Create a password" required>
+                    <i class="fa-regular fa-eye toggle-password" id="regEyeIcon"></i>
+                </div>
             </div>
+            
             <button type="button" class="login-btn" id="signUpBtn">Sign Up</button>
         </form>
         <div class="back-to-login">Already have an account? <a id="backToLogin">Log In</a></div>
@@ -77,9 +75,6 @@
     </div>
 
     <div id="toast"></div>
-
-    <div class="dashboard-container hidden" id="dashboardCard">
-        </div>
 
     <script type="module" src="app.js"></script>
 </body>
