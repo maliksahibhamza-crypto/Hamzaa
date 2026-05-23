@@ -1,28 +1,28 @@
-// Firebase Imports
+// Firebase SDK Imports (Module Version)
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-// TODO: Apna Firebase Config yahan zaroor paste karein
+// Firebase Configuration
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_PROJECT.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT.appspot.com",
-    messagingSenderId: "YOUR_ID",
-    appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyCF9uylO1mc_W23Nw-j2aP-HJ6m8IU4_MA",
+  authDomain: "project-78323.firebaseapp.com",
+  projectId: "project-78323",
+  storageBucket: "project-78323.firebasestorage.app",
+  messagingSenderId: "303040619412",
+  appId: "1:303040619412:web:bd53c80637997198c0e581"
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// 1. Toast Notification Function (Pop-up ka professional replacement)
+// 1. Toast Notification Function
 window.showToast = (msg) => {
     const toast = document.getElementById("toast");
     toast.innerText = msg;
     toast.className = "show";
-    // 3 second baad toast gayab ho jayega
     setTimeout(() => { toast.className = ""; }, 3000);
 };
 
@@ -72,7 +72,7 @@ document.getElementById('forgotBtn').addEventListener('click', () => {
         .catch(err => showToast("Error: " + err.message));
 });
 
-// 6. UI Navigation (Card Switching)
+// 6. UI Navigation (Card Switching Logic)
 const showForm = (id) => {
     document.querySelectorAll('.login-container').forEach(c => c.classList.add('hidden'));
     document.getElementById(id).classList.remove('hidden');
@@ -82,3 +82,4 @@ document.getElementById('goToSignUp').addEventListener('click', () => showForm('
 document.getElementById('goToForgot').addEventListener('click', () => showForm('forgotCard'));
 document.getElementById('backToLogin').addEventListener('click', () => showForm('loginCard'));
 document.getElementById('backToLoginFromForgot').addEventListener('click', () => showForm('loginCard'));
+            
