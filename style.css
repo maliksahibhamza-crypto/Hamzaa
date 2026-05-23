@@ -11,8 +11,8 @@ body {
     background-color: #f5f5f5;
     display: flex;
     justify-content: center;
-    /* alignment top se thoda niche rakha hai taake mobile bar se overlap na ho */
-    padding-top: 50px; 
+    /* FIX: padding hatayi aur center align kiya */
+    align-items: center; 
     min-height: 100vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
@@ -22,16 +22,16 @@ body {
    2. CONTAINERS & LAYOUT
    ========================================================= */
 .login-container {
-    width: 100%;
-    max-width: 400px; /* Desktop par box size fix rahega */
+    width: 90%; /* Mobile par thoda margin milega */
+    max-width: 400px;
     padding: 20px;
     background-color: #ffffff;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Halka shadow jo professionalism deta hai */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .hidden { 
-    display: none !important; /* Ye class use hoti hai tabs switch karne ke liye */
+    display: none !important;
 }
 
 h2 {
@@ -80,7 +80,7 @@ h2 {
 .toggle-password {
     position: absolute;
     right: 15px;
-    top: 50%; /* Center alignment */
+    top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
     color: #777;
