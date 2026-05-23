@@ -8,12 +8,13 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body {
-    background-color: #f5f5f5;
+html, body {
+    width: 100%;
     min-height: 100vh;
+    background-color: #f5f5f5;
     display: flex;
     justify-content: center;
-    align-items: center; /* Ye screen ke beech mein rakhega */
+    align-items: center; /* Screen ke bilkul beech mein */
     padding: 15px;
     color: #333;
 }
@@ -154,4 +155,4 @@ h2 {
 @keyframes fadein {
     from { opacity: 0; }
     to { opacity: 1; }
-}
+   }
