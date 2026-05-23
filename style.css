@@ -10,12 +10,11 @@
 
 body {
     background-color: #f5f5f5;
-    /* Yeh screen ko center mein lane ka sabse best tareeka hai */
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center; 
-    padding: 20px;
+    align-items: center; /* Ye screen ke beech mein rakhega */
+    padding: 15px;
     color: #333;
 }
 
@@ -72,7 +71,6 @@ h2 {
     border-color: #000;
 }
 
-/* Password Eye Icon Wrapper */
 .password-wrapper {
     position: relative;
     width: 100%;
@@ -87,7 +85,6 @@ h2 {
     color: #777;
     font-size: 18px;
     padding: 5px;
-    z-index: 10;
 }
 
 /* =========================================================
@@ -157,5 +154,4 @@ h2 {
 @keyframes fadein {
     from { opacity: 0; }
     to { opacity: 1; }
-   }
-   
+}
